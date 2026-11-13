@@ -9,21 +9,35 @@
     />
     <title>Web services | Louis Agyekum</title>
     <link rel="stylesheet" href="css/style.css" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script>
+      // New preference key resets the previous release's dark default once.
+      // After that, visitors can save either theme normally.
+      try {
+        document.documentElement.dataset.theme =
+          localStorage.getItem("louis-theme-v2") === "dark" ? "dark" : "light";
+      } catch (e) {
+        document.documentElement.dataset.theme = "light";
+      }
+    </script>
   </head>
   <body>
+    <div class="progress" aria-hidden="true"></div>
     <header>
       <div class="wrap">
         <a class="logo" href="index.html">Louis Agyekum</a>
         <button
-          class="menu-toggle"
+          class="menu-btn"
           type="button"
-          aria-label="Open navigation"
           aria-expanded="false"
-          aria-controls="site-nav"
+          aria-controls="nav"
+          aria-label="Open menu"
         >
           <span></span><span></span><span></span>
         </button>
-        <nav id="site-nav" aria-label="Main">
+        <nav id="nav" aria-label="Main">
           <a href="index.html#about">About</a><a href="index.html#work">Work</a
           ><a href="index.html#projects">Projects</a
           ><a href="services.html" aria-current="page">Web services</a
@@ -31,8 +45,43 @@
         </nav>
       </div>
     </header>
+    <div class="theme-control" aria-label="Website appearance">
+      <button
+        class="theme-toggle"
+        type="button"
+        role="switch"
+        aria-checked="false"
+        aria-label="Dark mode"
+        title="Toggle dark mode"
+      >
+        <span class="theme-icon theme-sun" aria-hidden="true"
+          ><svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          >
+            <circle cx="12" cy="12" r="4" />
+            <path
+              d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"
+            /></svg
+        ></span>
+        <span class="theme-icon theme-moon" aria-hidden="true"
+          ><svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          >
+            <path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z" /></svg
+        ></span>
+        <span class="theme-knob" aria-hidden="true"></span>
+      </button>
+    </div>
     <main class="wrap" style="padding: 56px 0 80px">
-      <h1>Need a simple website? I can help.</h1>
+      <h1 data-split>Need a simple website? I can help.</h1>
       <p class="lead">
         I build small, clean websites for businesses and individuals. I work
         with AI tools and check everything myself on phone and desktop before I
@@ -97,6 +146,6 @@
         ><a href="index.html">Back to my portfolio</a>
       </div>
     </footer>
-    <script src="js/site.js" defer></script>
+    <script src="js/script.js" defer></script>
   </body>
 </html>

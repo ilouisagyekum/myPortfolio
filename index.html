@@ -9,22 +9,36 @@
     />
     <title>Louis Agyekum, IT student and support intern candidate</title>
     <link rel="stylesheet" href="css/style.css" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script>
+      // New preference key resets the previous release's dark default once.
+      // After that, visitors can save either theme normally.
+      try {
+        document.documentElement.dataset.theme =
+          localStorage.getItem("louis-theme-v2") === "dark" ? "dark" : "light";
+      } catch (e) {
+        document.documentElement.dataset.theme = "light";
+      }
+    </script>
   </head>
-  <body>
+  <body id="top">
+    <div class="progress" aria-hidden="true"></div>
     <a class="skip" href="#main">Skip to content</a>
     <header>
       <div class="wrap">
-        <a class="logo" href="index.html">Louis Agyekum</a>
+        <a class="logo" href="#top">Louis Agyekum</a>
         <button
-          class="menu-toggle"
+          class="menu-btn"
           type="button"
-          aria-label="Open navigation"
           aria-expanded="false"
-          aria-controls="site-nav"
+          aria-controls="nav"
+          aria-label="Open menu"
         >
           <span></span><span></span><span></span>
         </button>
-        <nav id="site-nav" aria-label="Main">
+        <nav id="nav" aria-label="Main">
           <a href="#about">About</a><a href="#work">Work</a
           ><a href="#projects">Projects</a><a href="#skills">Skills</a
           ><a href="services.html">Web services</a
@@ -32,11 +46,46 @@
         </nav>
       </div>
     </header>
+    <div class="theme-control" aria-label="Website appearance">
+      <button
+        class="theme-toggle"
+        type="button"
+        role="switch"
+        aria-checked="false"
+        aria-label="Dark mode"
+        title="Toggle dark mode"
+      >
+        <span class="theme-icon theme-sun" aria-hidden="true"
+          ><svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          >
+            <circle cx="12" cy="12" r="4" />
+            <path
+              d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"
+            /></svg
+        ></span>
+        <span class="theme-icon theme-moon" aria-hidden="true"
+          ><svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          >
+            <path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z" /></svg
+        ></span>
+        <span class="theme-knob" aria-hidden="true"></span>
+      </button>
+    </div>
 
     <main id="main">
       <div class="wrap hero">
         <div>
-          <h1>
+          <h1 data-split>
             I'm Louis. I like fixing the thing that's stopping someone from
             getting on with their day.
           </h1>
@@ -63,21 +112,18 @@
           </div>
         </div>
         <aside class="now" aria-label="Right now">
-          <video
-            class="intro-video"
-            autoplay
-            muted
-            loop
-            playsinline
-            disablepictureinpicture
-            disableremoteplayback
-            preload="auto"
-            poster="assets/louis-video-poster.jpg"
-            aria-label="Short introductory video of Louis Agyekum"
-          >
-            <source src="assets/louis-intro.mp4" type="video/mp4" />
-            Your browser does not support video playback.
-          </video>
+          <div class="clip">
+            <video
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              aria-label="A short video of Louis saying hello"
+            >
+              <source src="assets/intro.mp4" type="video/mp4" />
+            </video>
+          </div>
           <h2>Right now</h2>
           <dl>
             <dt>Studying</dt>
@@ -99,30 +145,30 @@
 
       <section id="about">
         <div class="wrap row">
-          <h2>About me</h2>
-          <div class="body">
+          <h2 class="reveal">About me</h2>
+          <div class="body" data-stagger>
             <p>
-              My journey into IT has been shaped by determination and
-              self-education. I had access to my first personal computer later
-              than many people, but my interest in technology began long before
-              that. I made the most of online courses, hands-on opportunities
-              and my experience supporting telecommunications customers to keep
-              learning.
+              My IT journey is built on determination and self-education. I got
+              my hands on a personal computer later than most people, but my
+              interest in technology started much earlier. So I made up for it:
+              online courses, customer support work at a telecommunications
+              company, and every chance I got to learn by doing.
             </p>
             <p>
-              Working with customers taught me to listen, troubleshoot
-              patiently, protect personal information and explain technical
-              issues clearly. I am now building on that experience through my
-              Information Technology degree, independent projects and the Cisco
-              IT Support Specialist pathway.
+              My first tech job wasn't in a lab. It was a queue of people who
+              needed their SIM registered before a deadline, a fingerprint
+              scanner, a tablet and a network that didn't always cooperate. Most
+              "technical problems" turn out to be someone waiting for you to
+              explain what's going on, and I'm good at staying calm and
+              explaining it.
             </p>
             <p>
-              I haven't yet held a formal IT support position, and I'm eager to
-              gain that experience, learn from experienced professionals and
-              contribute to a team. Alongside IT support, I build web
-              applications and explore backend systems, databases and
-              user-centred design. I use AI tools to support development, then
-              review and verify the results.
+              I haven't held a formal IT support role yet. I'm committed to
+              gaining that practical experience, and I'm keen to connect with
+              people in the industry, learn from them and contribute. I use
+              ChatGPT when I build things, to draft, debug and understand why
+              something works, and I check the result against what the project
+              needs.
             </p>
           </div>
         </div>
@@ -130,8 +176,8 @@
 
       <section id="work">
         <div class="wrap row">
-          <h2>Work experience</h2>
-          <div>
+          <h2 class="reveal">Work experience</h2>
+          <div data-stagger>
             <div class="entry">
               <time>2026</time>
               <div>
@@ -206,51 +252,56 @@
 
       <section id="projects">
         <div class="wrap row">
-          <h2>Projects</h2>
-          <div>
-            <article class="proj">
-              <h3>KF Duo Trade loan management system</h3>
+          <h2 class="reveal">Projects</h2>
+          <div data-stagger>
+            <article class="proj spot">
+              <h3>KF Duo Trade loan application system</h3>
               <p class="where">
-                Team project, DCIT208 Repository Engineering, University of
-                Ghana, 2026
+                Team of seven, DCIT208 Repository Engineering, University of
+                Ghana, 2026. My role: Architecture and Context Lead.
               </p>
               <p>
-                A web app to replace paper loan applications for a client
-                business. Applicants apply online, upload their documents and
-                get a tracking code to check their status. Staff review
-                everything in an admin dashboard.
+                A real-client project to replace paper loan applications for KF
+                Duo Trade Company Limited. Applicants fill in an online form,
+                upload their documents and get a tracking code. Staff review
+                applications in an admin dashboard with Manager, Reviewer and
+                Viewer roles.
               </p>
               <ul>
                 <li>
-                  <strong>My part:</strong> built the backend and SQLite
-                  database for the loan management system, alongside frontend
-                  work including shared styling for the homepage, About and
-                  Contact pages.
+                  <strong>Pages I built:</strong> the shared stylesheet for the
+                  homepage, About and Contact pages, the applicant status-check
+                  portal, the confirmation page that shows a new tracking code,
+                  and about 170 lines of client-side validation for the
+                  application form.
                 </li>
                 <li>
-                  Developed server-side application workflows with Node.js and
-                  Express.js, database persistence for applications and
-                  administrator records, and protected document-handling
-                  features.
+                  <strong>Connecting it up:</strong> moved the site into the
+                  Express <code>public</code> folder and wired the form to the
+                  backend API.
                 </li>
                 <li>
-                  Implemented backend safeguards including authentication,
-                  role-based access, password hashing, upload validation and
-                  rate limiting.
+                  <strong>Deployment:</strong> made the data and upload folders
+                  configurable through environment variables so the app keeps
+                  its files on persistent storage, and set up the first Azure
+                  App Service deployment with GitHub Actions, plus CI lint
+                  checks, an admin-listing utility script, the environment
+                  template and the v1.0.0 release.
                 </li>
                 <li>
-                  Worked the way real teams do, with GitHub Issues, feature
-                  branches, pull requests, peer reviews and automated tests
-                  through GitHub Actions.
+                  <strong>Studied</strong> how the backend protects applicants'
+                  data: bcrypt password hashing, role-based access, rate
+                  limiting and upload validation.
                 </li>
                 <li>
-                  Used ChatGPT for drafting and troubleshooting, and reviewed
-                  what it suggested against the project requirements.
+                  Worked the way real teams do, with GitHub Issues, branches,
+                  pull requests, peer review and client evidence documented in
+                  the repo. Our AI use is logged in the repo too.
                 </li>
               </ul>
               <p class="stack">
-                Node.js, Express.js, SQLite, JavaScript, HTML, CSS, Git, GitHub
-                Actions
+                Node.js, Express.js, SQLite, JavaScript, HTML, CSS, GitHub
+                Actions, Azure App Service
               </p>
               <p>
                 <a
@@ -261,7 +312,7 @@
                 >
               </p>
             </article>
-            <article class="proj">
+            <article class="proj spot">
               <h3>LouMart e-commerce website</h3>
               <p class="where">Web development project, University of Ghana</p>
               <p>
@@ -280,7 +331,7 @@
                 >
               </p>
             </article>
-            <article class="proj">
+            <article class="proj spot">
               <h3>Richly Jnr Architecture website design</h3>
               <p class="where">
                 Human-Computer Interaction project, University of Ghana, 2026
@@ -295,17 +346,18 @@
               <p class="stack">
                 Figma, usability evaluation, user-centred design
               </p>
-              <p class="project-links">
+              <p class="links">
+                <a
+                  href="https://www.figma.com/proto/cH3LFaec0t0evLrTlX2343/HCI-RICHLY-JNR-ARCHIT?node-id=8-64&amp;t=3QjF5I2idbZ5x2Rs-0&amp;scaling=contain&amp;content-scaling=fixed&amp;page-id=1%3A2&amp;fuid=1697316392466833831"
+                  target="_blank"
+                  rel="noopener"
+                  >Try the clickable prototype</a
+                >
                 <a
                   href="https://www.figma.com/design/cH3LFaec0t0evLrTlX2343/HCI---RICHLY-JNR-ARCHIT?node-id=8-64&amp;t=3QjF5I2idbZ5x2Rs-1"
                   target="_blank"
-                  rel="noopener noreferrer"
-                  >View Figma design</a
-                ><a
-                  href="https://www.figma.com/proto/cH3LFaec0t0evLrTlX2343/HCI-RICHLY-JNR-ARCHIT?node-id=8-64&amp;t=3QjF5I2idbZ5x2Rs-0&amp;scaling=contain&amp;content-scaling=fixed&amp;page-id=1%3A2&amp;fuid=1697316392466833831"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Open interactive prototype</a
+                  rel="noopener"
+                  >Open the Figma design</a
                 >
               </p>
             </article>
@@ -315,45 +367,42 @@
 
       <section id="skills">
         <div class="wrap row">
-          <h2>Skills and learning</h2>
+          <h2 class="reveal">Skills and learning</h2>
           <div>
-            <div class="skills">
+            <div class="skills" data-stagger>
               <div>
                 <h3>Support</h3>
                 <ul>
-                  <li>Customer service and active listening</li>
+                  <li>Customer service</li>
+                  <li>Active listening</li>
                   <li>Troubleshooting phones, SIMs and connectivity</li>
-                  <li>Escalating issues clearly</li>
-                  <li>Handling confidential data carefully</li>
+                  <li>Clear escalation</li>
+                  <li>Handling confidential data</li>
                 </ul>
               </div>
               <div>
                 <h3>Building</h3>
                 <ul>
-                  <li>HTML, CSS and JavaScript</li>
-                  <li>
-                    Node.js, Express.js and SQLite (backend and database
-                    development)
-                  </li>
-                  <li>Git and GitHub: branches, pull requests, Actions</li>
-                  <li>Figma and usability basics</li>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JavaScript</li>
+                  <li>Node.js</li>
+                  <li>Express.js</li>
+                  <li>SQLite</li>
+                  <li>Git and GitHub</li>
+                  <li>GitHub Actions</li>
+                  <li>Figma</li>
                 </ul>
               </div>
               <div>
                 <h3>Learning now</h3>
                 <ul>
-                  <li>
-                    Cisco IT Support Specialist pathway: networking, operating
-                    systems, administration, security (in progress)
-                  </li>
-                  <li>
-                    BSc Information Technology, University of Ghana, 2025 to
-                    2028
-                  </li>
+                  <li>Cisco IT Support Specialist pathway (in progress)</li>
+                  <li>BSc Information Technology, 2025 to 2028</li>
                 </ul>
               </div>
             </div>
-            <p style="margin-top: 32px" class="where">
+            <p class="where reveal" style="margin-top: 32px">
               Earlier education: General Arts, Jachie Pramso Senior High School,
               Ashanti.
             </p>
@@ -363,8 +412,8 @@
 
       <section id="contact" class="contact">
         <div class="wrap row">
-          <h2>Contact</h2>
-          <div class="body">
+          <h2 class="reveal">Contact</h2>
+          <div class="body reveal">
             <h2 style="margin-bottom: 12px">
               If you have an internship or a problem that needs solving, write
               to me.
@@ -395,12 +444,16 @@
       </section>
     </main>
 
+    <div class="dock" aria-label="Quick actions">
+      <a class="btn main" href="mailto:louisagyekum0500@gmail.com">Email me</a
+      ><a class="btn" href="assets/Louis_Agyekum_Resume.pdf" download>Résumé</a>
+    </div>
     <footer>
       <div class="wrap">
         <span>Louis Agyekum, Kumasi, Ghana</span
         ><span>Built with AI assistance and checked by me.</span>
       </div>
     </footer>
-    <script src="js/site.js" defer></script>
+    <script src="js/script.js" defer></script>
   </body>
 </html>
