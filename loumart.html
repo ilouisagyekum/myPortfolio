@@ -1,0 +1,308 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <meta
+      content="LouMart is an independent Level 200 E-Business Architectures responsive e-commerce website project by Louis Agyekum."
+      name="description"
+    />
+    <title>LouMart project case study | Louis Agyekum</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script>
+      // New preference key resets the previous release's dark default once.
+      // After that, visitors can save either theme normally.
+      try {
+        document.documentElement.dataset.theme =
+          localStorage.getItem("louis-theme-v2") === "dark" ? "dark" : "light";
+      } catch (e) {
+        document.documentElement.dataset.theme = "light";
+      }
+    </script>
+  </head>
+  <body id="top">
+    <div aria-hidden="true" class="progress"></div>
+    <a class="skip" href="#main">Skip to content</a>
+    <header>
+      <div class="wrap">
+        <a class="logo" href="index.html">Louis Agyekum</a>
+        <button
+          aria-controls="nav"
+          aria-expanded="false"
+          aria-label="Open menu"
+          class="menu-btn"
+          type="button"
+        >
+          <span></span><span></span><span></span>
+        </button>
+        <nav aria-label="Main" id="nav">
+          <a href="index.html#about">About</a><a href="index.html#work">Work-xp</a
+          ><a aria-current="page" href="index.html#projects">Projects</a
+          ><a href="index.html#skills">Skills</a
+          ><a href="services.html">Web services</a
+          ><a href="index.html#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <div aria-label="Website appearance" class="theme-control">
+      <button
+        aria-checked="false"
+        aria-label="Dark mode"
+        class="theme-toggle"
+        role="switch"
+        title="Toggle dark mode"
+        type="button"
+      >
+        <span aria-hidden="true" class="theme-icon theme-sun"
+          ><svg
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-width="2"
+            viewbox="0 0 24 24"
+          >
+            <circle cx="12" cy="12" r="4"></circle>
+            <path
+              d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"
+            ></path></svg
+        ></span>
+        <span aria-hidden="true" class="theme-icon theme-moon"
+          ><svg
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-width="2"
+            viewbox="0 0 24 24"
+          >
+            <path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"></path></svg
+        ></span>
+        <span aria-hidden="true" class="theme-knob"></span>
+      </button>
+    </div>
+    <main class="case-study" id="main">
+      <div class="wrap case-hero">
+        <p class="loumart-project-state">Under active development</p>
+        <p class="case-eyebrow">Selected work / Academic project / Level 200</p>
+        <h1 data-split="">
+          LouMart<span class="case-title-sub"
+            >An e-commerce storefront built from the ground up.</span
+          >
+        </h1>
+        <p class="lead">
+          My independent semester project for E-Business Architectures:
+          translating familiar online shopping patterns into a responsive,
+          multi-page website. The project continues to evolve; the live site is
+          a work in progress.
+        </p>
+        <div class="btns">
+          <a
+            class="btn main"
+            href="https://ilouisagyekum.github.io/209_E-commerce-Project/"
+            rel="noopener noreferrer"
+            target="_blank"
+            >View latest live website (in development) ↗</a
+          ><a
+            class="btn"
+            href="https://github.com/ilouisagyekum/209_E-commerce-Project/tree/pre-release"
+            rel="noopener noreferrer"
+            target="_blank"
+            >View the source ↗</a
+          >
+        </div>
+        <dl class="case-facts">
+          <div>
+            <dt>My role</dt>
+            <dd>Independent developer</dd>
+          </div>
+          <div>
+            <dt>Context</dt>
+            <dd>Level 200, first semester</dd>
+          </div>
+          <div>
+            <dt>Course</dt>
+            <dd>E-Business Architectures</dd>
+          </div>
+          <div>
+            <dt>Built with</dt>
+            <dd>HTML, CSS, JavaScript</dd>
+          </div>
+        </dl>
+      </div>
+      <section aria-labelledby="loumart-preview-heading" class="case-band">
+        <div class="wrap">
+          <div class="case-shot-heading">
+            <h2 id="loumart-preview-heading">A closer look at LouMart</h2>
+            <p>
+              Desktop and mobile views of the storefront, showing how
+              product browsing adapts to different screens.
+            </p>
+          </div>
+
+          <div class="case-screenshot-pair">
+            <figure class="case-screenshot">
+              <img
+                alt="Actual LouMart website screenshot showing its dark navigation bar, product search, four product cards with images and Ghana cedi prices, and Add to cart buttons"
+                decoding="async"
+                height="639"
+                loading="lazy"
+                src="assets/projects/loumart-homepage.png"
+                width="1279"
+              />
+              <figcaption>
+                Actual LouMart storefront screenshot supplied by the developer.
+                Desktop view of the product listing section.
+              </figcaption>
+            </figure>
+            <figure class="mobile-shot">
+              <img
+                alt="Actual mobile LouMart storefront showing stacked navigation, responsive product card with headphones, Ghana cedi price and Add to cart button"
+                decoding="async"
+                height="1280"
+                loading="lazy"
+                src="assets/projects/loumart-mobile.webp"
+                width="628"
+              />
+              <figcaption>
+                Mobile view · Real LouMart storefront screenshot supplied by the
+                developer.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="wrap row">
+          <h2>A brief</h2>
+          <div class="body">
+            <h3>Make an online store work across screen sizes.</h3>
+            <p>
+              In my Level 200 E-Business Architectures course, I was tasked with
+              developing a responsive e-commerce website. I worked on LouMart
+              individually, using Amazon's storefront as a reference for
+              navigation, product presentation and shopping-page structure.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="wrap row">
+          <h2>What I built</h2>
+          <div class="body">
+            <div class="case-feature-list">
+              <article>
+                <span>01</span>
+                <div class="storefront-list">
+                  <h3>Storefront and categories</h3>
+                  <p>
+                    Product cards with imagery, names and prices, alongside
+                    dedicated category browsing pages.
+                  </p>
+                </div>
+              </article>
+              <article>
+                <span>02</span>
+                <div>
+                  <h3>Promotional shopping sections</h3>
+                  <p>
+                    A deal-of-the-day page and a separate LouMart Donkomi
+                    section, including a video-led introduction.
+                  </p>
+                </div>
+              </article>
+              <article>
+                <span>03</span>
+                <div>
+                  <h3>Cart and account screens</h3>
+                  <p>
+                    A shopping-cart summary and login/signup form interfaces
+                    that communicate the intended shopping flow.
+                  </p>
+                </div>
+              </article>
+              <article>
+                <span>04</span>
+                <div>
+                  <h3>Responsive page styling</h3>
+                  <p>
+                    Shared CSS supports a consistent multi-page visual system,
+                    with attention to layout and navigation.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="wrap row">
+          <h2>Implementation</h2>
+          <div class="body">
+            <h3>A straightforward frontend architecture.</h3>
+            <p>
+              The project is structured as separate HTML pages with a shared
+              <code>styles.css</code> stylesheet. The repository includes
+              <code>index.html</code>, <code>categories.html</code>,
+              <code>topdeal.html</code>, <code>donkomi.html</code>,
+              <code>cart.html</code>, <code>login.html</code>,
+              <code>signup.html</code> and <code>help.html</code>, plus images
+              and video assets.
+            </p>
+            <p>
+              Publishing the site through GitHub Pages made the project
+              accessible online without requiring a server application.
+            </p>
+            <p class="case-note">
+              <strong>Scope note:</strong> The storefront is an academic
+              frontend prototype. Product buttons, account forms and checkout
+              navigation do not establish a functioning payment system,
+              persistent shopping basket or authenticated customer accounts.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="wrap row">
+          <h2>What I learned</h2>
+          <div class="body">
+            <h3>From reference to implementation.</h3>
+            <p>
+              LouMart helped me practise independently organizing a website with
+              multiple related pages, translating familiar retail layouts into
+              HTML and CSS, and preparing a public demonstration through version
+              control and GitHub Pages.
+            </p>
+            <p>
+              It also highlights a useful distinction in software development:
+              building a convincing interface is not the same as building the
+              underlying commerce infrastructure. A production store would need
+              working cart state, authentication, inventory, secure checkout and
+              order management.
+            </p>
+            <div class="btns">
+              <a class="btn main" href="index.html#projects"
+                >← Back to projects</a
+              ><a
+                class="btn"
+                href="https://github.com/ilouisagyekum/209_E-commerce-Project/tree/pre-release"
+                rel="noopener noreferrer"
+                target="_blank"
+                >Inspect the code ↗</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="wrap">
+        <span>Louis Agyekum, Kumasi, Ghana</span
+        ><span>Built with AI assistance and checked by me.</span>
+      </div>
+    </footer>
+    <script defer="" src="js/script.js"></script>
+  </body>
+</html>
